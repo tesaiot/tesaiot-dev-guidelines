@@ -16,7 +16,6 @@ copyright: |
 # Theme Configuration
 theme:
   name: material
-  custom_dir: overrides
   
   # Features
   features:
