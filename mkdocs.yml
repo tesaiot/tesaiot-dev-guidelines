@@ -86,9 +86,6 @@ theme:
 plugins:
   - search:
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
-  - git-revision-date-localized:
-      enable_creation_date: true
-      type: timeago
   - minify:
       minify_html: true
       minify_js: true
