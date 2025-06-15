@@ -96,10 +96,6 @@ plugins:
       minify_css: true
       htmlmin_opts:
         remove_comments: true
-  - awesome-pages
-  - redirects:
-      redirect_maps:
-        'index.md': 'getting-started/overview.md'
 
 # Markdown Extensions
 markdown_extensions:
