@@ -1,0 +1,246 @@
+site_name: TES⩓IoT Developer Guidelines
+site_description: Comprehensive development standards and best practices for TES⩓IoT Platform
+site_url: https://docs.tesaiot.com
+site_author: TESA IoT Team
+
+# Repository
+repo_name: tesaiot/tesaiot-dev-guidelines
+repo_url: https://github.com/tesaiot/tesaiot-dev-guidelines
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: |
+  Copyright &copy; 2025 Thai Embedded Systems Association (TESA). 
+  <a href="#__consent">Change cookie settings</a>
+
+# Theme Configuration
+theme:
+  name: material
+  custom_dir: overrides
+  
+  # Features
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+    - content.tooltips
+    - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.path
+    - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
+  
+  # Palette
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  
+  # Fonts
+  font:
+    text: Roboto
+    code: Roboto Mono
+  
+  # Logo and icons
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  icon:
+    logo: logo
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+  - awesome-pages
+  - redirects:
+      redirect_maps:
+        'index.md': 'getting-started/overview.md'
+
+# Markdown Extensions
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      permalink_title: Link to this section
+  
+  # PyMdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: tesaiot
+      repo: tesaiot-dev-guidelines
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Extra CSS and JavaScript
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# Extra configuration
+extra:
+  status:
+    new: Recently added
+    deprecated: Deprecated
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/thumb-up-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/thumb-down-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+            Thanks for your feedback! Help us improve by
+            <a href="https://github.com/tesaiot/tesaiot-dev-guidelines/issues/new/?title=[Feedback]+{title}" target="_blank" rel="noopener">opening an issue</a>.
+  
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/tesaiot
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/tesaiot
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/company/tesaiot
+  
+  version:
+    provider: mike
+    default: latest
+  
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+
+# Navigation structure (simplified for initial setup)
+nav:
+  - Home:
+    - index.md
+    - License: license.md
+  
+  - Getting Started:
+    - getting-started/index.md
+    - Overview: getting-started/overview.md
+    - Quick Start: getting-started/quick-start.md
+    - Installation: getting-started/installation.md
+    - First Project: getting-started/first-project.md
+  
+  - Architecture:
+    - architecture/index.md
+    - Overview: architecture/overview.md
+    - Core Concepts: architecture/core-concepts.md
+    - Security Model: architecture/security-model.md
+  
+  - API Reference:
+    - api-reference/index.md
+    - REST API: api-reference/rest-api.md
+    - Authentication: api-reference/authentication.md
+    - Endpoints: api-reference/endpoints.md
+  
+  - Development:
+    - development/index.md
+    - Standards: development/standards.md
+    - Best Practices: development/best-practices.md
+    - Testing: development/testing.md
+  
+  - Tutorials:
+    - tutorials/index.md
+    - Basic: tutorials/basic.md
+    - Advanced: tutorials/advanced.md
+  
+  - Reference:
+    - reference/index.md
+    - Glossary: reference/glossary.md
+    - FAQ: reference/faq.md
